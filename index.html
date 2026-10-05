@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Технологии разработки ПО — учебный портал</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="#about" class="logo">
+      <img src="images/logo.svg" alt="Логотип учебного портала" width="40" height="40">
+      <span>ТРПО · Портал</span>
+    </a>
+
+    <nav aria-label="Основная навигация">
+      <ul class="nav-list">
+        <li><a href="#about">О курсе</a></li>
+        <li><a href="#tracks">Направления</a></li>
+        <li><a href="#schedule">Расписание</a></li>
+        <li><a href="#signup">Регистрация</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- О курсе -->
+    <section id="about" class="section hero">
+      <img src="images/cover.svg" alt="Обложка учебного портала" class="hero__cover">
+      <h1>Технологии разработки программного обеспечения</h1>
+      <p>
+        Учебный портал по дисциплине ТРПО. Данные разделов взяты из
+        <code>data/content.csv</code>, навигация — из <code>data/navigation.json</code>.
+      </p>
+    </section>
+
+    <!-- Направления: 6 карточек из content.csv -->
+    <section id="tracks" class="section">
+      <h2>Направления</h2>
+      <div class="cards">
+
+        <article class="card">
+          <h3>HTML</h3>
+          <p class="card__category">Основа</p>
+          <p>Структура и семантика документа</p>
+          <p class="card__value">Баллов: 8</p>
+        </article>
+
+        <article class="card">
+          <h3>CSS</h3>
+          <p class="card__category">Оформление</p>
+          <p>Стили и адаптивность</p>
+          <p class="card__value">Баллов: 9</p>
+        </article>
+
+        <article class="card">
+          <h3>Git</h3>
+          <p class="card__category">Инструменты</p>
+          <p>История изменений</p>
+          <p class="card__value">Баллов: 7</p>
+        </article>
+
+        <article class="card">
+          <h3>Forms</h3>
+          <p class="card__category">HTML</p>
+          <p>Пользовательский ввод</p>
+          <p class="card__value">Баллов: 6</p>
+        </article>
+
+        <article class="card">
+          <h3>Accessibility</h3>
+          <p class="card__category">Качество</p>
+          <p>Доступность интерфейса</p>
+          <p class="card__value">Баллов: 10</p>
+        </article>
+
+        <article class="card">
+          <h3>DevTools</h3>
+          <p class="card__category">Проверка</p>
+          <p>Исследование DOM и стилей</p>
+          <p class="card__value">Баллов: 8</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Расписание: таблица из тех же данных -->
+    <section id="schedule" class="section">
+      <h2>Расписание</h2>
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Тема</th>
+            <th scope="col">Категория</th>
+            <th scope="col">Баллов</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>HTML</td><td>Основа</td><td>8</td></tr>
+          <tr><td>2</td><td>CSS</td><td>Оформление</td><td>9</td></tr>
+          <tr><td>3</td><td>Git</td><td>Инструменты</td><td>7</td></tr>
+          <tr><td>4</td><td>Forms</td><td>HTML</td><td>6</td></tr>
+          <tr><td>5</td><td>Accessibility</td><td>Качество</td><td>10</td></tr>
+          <tr><td>6</td><td>DevTools</td><td>Проверка</td><td>8</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Регистрация: форма -->
+    <section id="signup" class="section">
+      <h2>Регистрация на курс</h2>
+
+      <form class="signup-form" action="#" method="post" novalidate>
+
+        <div class="form-field">
+          <label for="name">Имя</label>
+          <input type="text" id="name" name="name"
+                 required minlength="2" maxlength="50"
+                 autocomplete="name">
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email"
+                 required autocomplete="email">
+        </div>
+
+        <div class="form-field">
+          <label for="age">Возраст</label>
+          <input type="number" id="age" name="age"
+                 min="16" max="100" required>
+        </div>
+
+        <div class="form-field">
+          <label for="track">Направление</label>
+          <select id="track" name="track" required>
+            <option value="">— выберите —</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="git">Git</option>
+            <option value="forms">Forms</option>
+            <option value="a11y">Accessibility</option>
+            <option value="devtools">DevTools</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="comment">Комментарий</label>
+          <textarea id="comment" name="comment" rows="4"
+                    minlength="10" maxlength="300"
+                    placeholder="Почему хотите записаться?"></textarea>
+        </div>
+
+        <button type="submit">Отправить заявку</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 ТРПО · Учебный портал. Практическая работа №1.</p>
+  </footer>
+
+</body>
+</html>

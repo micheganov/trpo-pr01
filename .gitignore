@@ -1,0 +1,29 @@
+# --- Операционные системы ---
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Редакторы и IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Зависимости (на будущее) ---
+node_modules/
+package-lock.json
+yarn.lock
+
+# --- Логи и временные файлы ---
+*.log
+npm-debug.log*
+*.tmp
+*.bak
+
+# --- Локальные настройки ---
+.env
+.env.local
